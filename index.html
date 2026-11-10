@@ -3,54 +3,108 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ALFANSTORE.id | Top Up Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALFANSTORE.id - Game Top Up</title>
+<meta name="theme-color" content="#080d19">
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#080d18;color:#fff;font-family:Arial,sans-serif}
-header{padding:18px;background:#101a2c;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #243b5c}
-.logo{font-size:21px;font-weight:bold;color:#36aaff}
+body{
+ margin:0;background:#080d19;color:#fff;
+ font-family:Arial,sans-serif;
+}
+header{
+ padding:18px 20px;background:#101a2d;
+ display:flex;justify-content:space-between;
+ align-items:center;border-bottom:1px solid #253958;
+ position:sticky;top:0;z-index:5;
+}
+.logo{font-size:22px;font-weight:900;color:#35aaff}
 .logo span{color:white}
-.hero{padding:30px 20px;background:linear-gradient(130deg,#102b50,#080d18)}
-.hero small{color:#36aaff;font-weight:bold}
-.hero h1{font-size:30px;margin:12px 0}
-.hero p{color:#b0bfd3;line-height:1.6}
-.container{padding:20px 16px;max-width:650px;margin:auto}
-h2{font-size:19px}
-.games{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.game{background:#142139;border:1px solid #304563;border-radius:12px;padding:17px 10px;text-align:center;cursor:pointer}
-.game .emoji{font-size:36px}
-.game.active{border:2px solid #36aaff;background:#172d4b}
-.game b{display:block;margin-top:9px}
-.panel{background:#121d31;padding:17px;border-radius:13px;margin-top:20px;border:1px solid #263c5c}
-label{display:block;margin-top:14px;font-size:14px;color:#c2d1e4}
-input,select{width:100%;padding:14px;margin-top:8px;background:#091326;border:1px solid #354a68;color:white;border-radius:8px;font-size:15px}
-.packages{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
-.package{padding:14px;background:#091326;border:1px solid #304563;border-radius:9px;cursor:pointer}
-.package.active{border:2px solid #36aaff}
+.header-tag{font-size:11px;color:#a8c8e8}
+.hero{
+ padding:38px 20px;
+ background:radial-gradient(ellipse at top right,#174c82,#0b172b 55%,#080d19);
+}
+.hero small{color:#40b5ff;font-weight:bold;letter-spacing:2px}
+.hero h1{font-size:32px;line-height:1.2;margin:14px 0}
+.hero p{color:#b7c6dc;line-height:1.6;font-size:14px}
+.container{max-width:650px;margin:auto;padding:20px 16px}
+.section-title{font-size:19px;margin:8px 0 15px}
+.games{
+ display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+}
+.game{
+ background:#121f35;border:1px solid #2c4363;
+ border-radius:13px;padding:17px 8px;text-align:center;
+ cursor:pointer;transition:.2s;
+}
+.game.active{border:2px solid #35aaff;background:#193454}
+.game .emoji{font-size:35px}
+.game b{display:block;margin-top:9px;font-size:14px}
+.panel{
+ background:#111d31;border:1px solid #293e5e;
+ border-radius:15px;padding:18px;margin-top:22px;
+}
+label{display:block;font-size:13px;color:#c2d3e9;margin-top:16px}
+input,select{
+ width:100%;padding:14px;margin-top:8px;
+ background:#091426;color:white;
+ border:1px solid #344b6c;border-radius:9px;
+ font-size:15px;outline:none;
+}
+input:focus,select:focus{border-color:#35aaff}
+.packages{
+ display:grid;grid-template-columns:repeat(2,1fr);
+ gap:10px;margin-top:12px;
+}
+.package{
+ background:#091426;border:1px solid #304563;
+ border-radius:10px;padding:14px;cursor:pointer;
+}
+.package.active{border:2px solid #35aaff;background:#17314f}
 .package b{display:block;font-size:14px}
-.package small{display:block;color:#aabbd0;margin-top:7px}
-.total{display:flex;justify-content:space-between;margin:20px 0;font-size:18px}
-button{width:100%;padding:15px;border:0;border-radius:9px;background:#168fe5;color:white;font-weight:bold;font-size:16px;cursor:pointer}
-.note{font-size:12px;color:#9eacc1;line-height:1.6}
-footer{text-align:center;color:#8998ad;padding:25px;border-top:1px solid #263958}
+.package small{display:block;color:#a9bfd9;margin-top:8px}
+.total{
+ display:flex;justify-content:space-between;
+ align-items:center;margin:22px 0;font-size:17px;
+}
+.total b{color:#42b5ff}
+button{
+ width:100%;padding:15px;border:0;border-radius:10px;
+ background:linear-gradient(100deg,#087bd1,#25aaff);
+ color:white;font-weight:bold;font-size:15px;
+ cursor:pointer;
+}
+button:active{opacity:.8}
+.info{
+ background:#0b172a;border:1px solid #263d5c;
+ border-radius:10px;padding:13px;
+ color:#a9bfd5;font-size:12px;line-height:1.6;
+}
+.benefits p{color:#c4d4e8;font-size:14px}
+footer{
+ margin-top:30px;padding:25px 15px;text-align:center;
+ color:#8496b0;border-top:1px solid #263958;font-size:12px;
+}
+footer b{color:#39adff;font-size:18px}
 </style>
 </head>
 <body>
 
 <header>
  <div class="logo">ALFAN<span>STORE.id</span></div>
- <span>🎮 GAME STORE</span>
+ <div class="header-tag">🎮 GAME STORE</div>
 </header>
 
 <section class="hero">
- <small>TOP UP GAME DIGITAL</small>
- <h1>Top Up Game Favoritmu!</h1>
- <p>Praktis, mudah dan nyaman. Pilih game dan nominal top up pilihanmu.</p>
+ <small>WELCOME TO ALFANSTORE</small>
+ <h1>Top Up Game<br>Jadi Lebih Mudah!</h1>
+ <p>Pilih game favoritmu, pilih nominal, dan kirim pertanyaan pesanan melalui WhatsApp.</p>
 </section>
 
 <main class="container">
- <h2>🔥 Pilih Game</h2>
+
+ <h2 class="section-title">🔥 Pilih Game Favorit</h2>
  <div class="games">
   <div class="game active" onclick="choose(this,'Mobile Legends')">
    <div class="emoji">⚔️</div><b>Mobile Legends</b>
@@ -70,89 +124,98 @@ footer{text-align:center;color:#8998ad;padding:25px;border-top:1px solid #263958
  </div>
 
  <section class="panel">
-  <h2>🛒 Detail Pesanan</h2>
+  <h2 class="section-title">🛒 Buat Pesanan</h2>
 
-  <label>Game</label>
+  <label>Game pilihan</label>
   <input id="game" value="Mobile Legends" readonly>
 
   <label>User ID</label>
   <input id="uid" placeholder="Masukkan User ID">
 
-  <label>Server / Zone ID (jika diperlukan)</label>
-  <input id="server" placeholder="Masukkan Server ID">
+  <label>Zone ID / Server ID</label>
+  <input id="server" placeholder="Masukkan jika diperlukan">
 
-  <label>Pilih nominal</label>
+  <label>Pilih nominal top up</label>
   <div class="packages" id="packages"></div>
 
   <div class="total">
-   <span>Total</span>
+   <span>Total harga contoh</span>
    <b id="total">Pilih nominal</b>
   </div>
 
-  <label>Metode pembayaran</label>
+  <label>Metode pembayaran yang ingin ditanyakan</label>
   <select id="payment">
-   <option value="QRIS">QRIS</option>
-   <option value="Transfer Bank">Transfer Bank</option>
+   <option>QRIS</option>
+   <option>Transfer Bank</option>
+   <option>Konfirmasi metode pembayaran</option>
   </select>
 
-  <button onclick="order()">LANJUTKAN PESANAN</button>
-  <p class="note">Catatan: Ini masih versi demo. Harga merupakan contoh, pembayaran belum aktif dan diamond belum dikirim otomatis.</p>
+  <button onclick="order()">PESAN MELALUI WHATSAPP</button>
+
+  <p class="info">
+   ℹ️ Harga di website ini masih contoh dan belum merupakan penawaran transaksi aktif. Konfirmasikan harga serta ketersediaan produk sebelum melakukan pembayaran. Jangan kirim bukti pembayaran sebelum pesanan terverifikasi.
+  </p>
  </section>
 
- <section class="panel">
-  <h2>🛡️ Kenapa ALFANSTORE?</h2>
+ <section class="panel benefits">
+  <h2 class="section-title">🛡️ Tentang ALFANSTORE</h2>
   <p>✔ Tampilan mudah digunakan</p>
-  <p>✔ Pilihan game favorit</p>
-  <p>✔ Sistem pesanan terstruktur</p>
-  <p>✔ Siap dikembangkan menjadi otomatis</p>
+  <p>✔ Pilihan game populer</p>
+  <p>✔ Detail pesanan lebih teratur</p>
+  <p>✔ Layanan pelanggan melalui WhatsApp</p>
  </section>
+
 </main>
 
 <footer>
  <b>ALFANSTORE.id</b>
- <p>© 2026 ALFANSTORE. All Rights Reserved.</p>
+ <p>Game Top Up Store</p>
+ <p>© 2026 ALFANSTORE.id</p>
 </footer>
 
 <script>
 let selectedGame="Mobile Legends";
 let selectedPackage=null;
 
+// GANTI DENGAN NOMOR WHATSAPP TOKO KAMU
+const nomorWA="628xxxxxxxxxx";
+
 const products={
  "Mobile Legends":[
- ["86 Diamonds",20000],
- ["172 Diamonds",39000],
- ["257 Diamonds",58000],
- ["344 Diamonds",77000],
- ["514 Diamonds",115000],
- ["706 Diamonds",155000]
+  ["86 Diamonds",20000],
+  ["172 Diamonds",39000],
+  ["257 Diamonds",58000],
+  ["344 Diamonds",77000],
+  ["514 Diamonds",115000],
+  ["706 Diamonds",155000]
  ],
  "Free Fire":[
- ["70 Diamonds",10000],
- ["140 Diamonds",20000],
- ["355 Diamonds",50000],
- ["720 Diamonds",100000],
- ["1450 Diamonds",200000],
- ["2180 Diamonds",300000]
+  ["70 Diamonds",10000],
+  ["140 Diamonds",20000],
+  ["355 Diamonds",50000],
+  ["720 Diamonds",100000],
+  ["1450 Diamonds",200000],
+  ["2180 Diamonds",300000]
  ],
  "PUBG Mobile":[
- ["60 UC",16000],
- ["325 UC",79000],
- ["660 UC",155000],
- ["1800 UC",390000],
- ["3850 UC",780000],
- ["8100 UC",1550000]
+  ["60 UC",16000],
+  ["325 UC",79000],
+  ["660 UC",155000],
+  ["1800 UC",390000],
+  ["3850 UC",780000],
+  ["8100 UC",1550000]
  ],
  "Genshin Impact":[
- ["60 Genesis Crystals",16000],
- ["300 Genesis Crystals",79000],
- ["980 Genesis Crystals",239000],
- ["1980 Genesis Crystals",479000]
+  ["60 Genesis Crystals",16000],
+  ["300 Genesis Crystals",79000],
+  ["980 Genesis Crystals",239000],
+  ["1980 Genesis Crystals",479000]
  ],
  "Honor of Kings":[
- ["80 Tokens",16000],
- ["240 Tokens",49000],
- ["400 Tokens",79000],
- ["800 Tokens",155000]
+  ["80 Tokens",16000],
+  ["240 Tokens",49000],
+  ["400 Tokens",79000],
+  ["800 Tokens",155000]
  ]
 };
 
@@ -164,56 +227,75 @@ function choose(el,name){
  document.querySelectorAll(".game").forEach(x=>x.classList.remove("active"));
  el.classList.add("active");
  selectedGame=name;
- document.getElementById("game").value=name;
  selectedPackage=null;
+ document.getElementById("game").value=name;
  renderPackages();
 }
 
 function renderPackages(){
  const area=document.getElementById("packages");
  area.innerHTML="";
+
  products[selectedGame].forEach((p,i)=>{
   const item=document.createElement("div");
   item.className="package";
-  item.innerHTML="<b>"+p[0]+"</b><small>"+rupiah(p[1])+"</small>";
+  const title=document.createElement("b");
+  title.textContent=p[0];
+  const price=document.createElement("small");
+  price.textContent=rupiah(p[1]);
+  item.append(title,price);
+
   item.onclick=()=>{
    selectedPackage=i;
    document.querySelectorAll(".package").forEach(x=>x.classList.remove("active"));
    item.classList.add("active");
    document.getElementById("total").textContent=rupiah(p[1]);
   };
+
   area.appendChild(item);
  });
+
  document.getElementById("total").textContent="Pilih nominal";
 }
 
 function order(){
  const uid=document.getElementById("uid").value.trim();
+ const server=document.getElementById("server").value.trim();
+
  if(!uid){
   alert("Masukkan User ID terlebih dahulu.");
   return;
  }
+
  if(selectedPackage===null){
   alert("Silakan pilih nominal top up.");
   return;
  }
+
+ if(nomorWA==="628xxxxxxxxxx"){
+  alert("Nomor WhatsApp toko belum diatur di dalam kode.");
+  return;
+ }
+
  const p=products[selectedGame][selectedPackage];
- const server=document.getElementById("server").value.trim();
  const payment=document.getElementById("payment").value;
 
- const detail=
- "DEMO PESANAN ALFANSTORE\n"+
+ const pesan=
+ "Halo ALFANSTORE.id, saya ingin bertanya tentang pesanan:\n\n"+
  "Game: "+selectedGame+"\n"+
  "User ID: "+uid+"\n"+
- "Server: "+(server||"-")+"\n"+
+ "Zone/Server ID: "+(server||"-")+"\n"+
  "Produk: "+p[0]+"\n"+
  "Harga contoh: "+rupiah(p[1])+"\n"+
- "Pembayaran: "+payment;
+ "Metode pembayaran: "+payment+
+ "\n\nMohon konfirmasi harga dan ketersediaan produk.";
 
- alert(detail+"\n\nPesanan belum dibayar atau diproses. Sistem pembayaran akan dihubungkan setelah backend dan supplier aktif.");
+ const url="https://wa.me/"+nomorWA+"?text="+encodeURIComponent(pesan);
+ window.open(url,"_blank");
 }
 
 renderPackages();
 </script>
+
 </body>
 </html>
