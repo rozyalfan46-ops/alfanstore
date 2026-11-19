@@ -1,300 +1,162 @@
 
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ALFANSTORE.id - Game Top Up</title>
-<meta name="theme-color" content="#080d19">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be Mine? ❤️</title>
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;background:#080d19;color:#fff;
- font-family:Arial,sans-serif;
+ margin:0;min-height:100vh;
+ display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(135deg,#ffe0ed,#ffd2e6,#fff0f6);
+ font-family:Arial,sans-serif;overflow:hidden;color:#e94f88
 }
-header{
- padding:18px 20px;background:#101a2d;
- display:flex;justify-content:space-between;
- align-items:center;border-bottom:1px solid #253958;
- position:sticky;top:0;z-index:5;
+.arena{
+ width:100%;max-width:430px;height:600px;
+ padding:25px 18px;text-align:center;
+ position:relative;overflow:hidden
 }
-.logo{font-size:22px;font-weight:900;color:#35aaff}
-.logo span{color:white}
-.header-tag{font-size:11px;color:#a8c8e8}
-.hero{
- padding:38px 20px;
- background:radial-gradient(ellipse at top right,#174c82,#0b172b 55%,#080d19);
+h1{font-size:27px;margin:15px 0}
+p{font-size:16px;color:#a64b70;line-height:1.6}
+.pentol{
+ width:190px;height:210px;margin:25px auto;
+ animation:bounce 1.8s infinite ease-in-out
 }
-.hero small{color:#40b5ff;font-weight:bold;letter-spacing:2px}
-.hero h1{font-size:32px;line-height:1.2;margin:14px 0}
-.hero p{color:#b7c6dc;line-height:1.6;font-size:14px}
-.container{max-width:650px;margin:auto;padding:20px 16px}
-.section-title{font-size:19px;margin:8px 0 15px}
-.games{
- display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+@keyframes bounce{
+ 0%,100%{transform:translateY(0) rotate(-3deg)}
+ 50%{transform:translateY(-15px) rotate(3deg)}
 }
-.game{
- background:#121f35;border:1px solid #2c4363;
- border-radius:13px;padding:17px 8px;text-align:center;
- cursor:pointer;transition:.2s;
+.actions{
+ position:absolute;bottom:75px;left:0;width:100%;
+ display:flex;justify-content:center;gap:18px
 }
-.game.active{border:2px solid #35aaff;background:#193454}
-.game .emoji{font-size:35px}
-.game b{display:block;margin-top:9px;font-size:14px}
-.panel{
- background:#111d31;border:1px solid #293e5e;
- border-radius:15px;padding:18px;margin-top:22px;
-}
-label{display:block;font-size:13px;color:#c2d3e9;margin-top:16px}
-input,select{
- width:100%;padding:14px;margin-top:8px;
- background:#091426;color:white;
- border:1px solid #344b6c;border-radius:9px;
- font-size:15px;outline:none;
-}
-input:focus,select:focus{border-color:#35aaff}
-.packages{
- display:grid;grid-template-columns:repeat(2,1fr);
- gap:10px;margin-top:12px;
-}
-.package{
- background:#091426;border:1px solid #304563;
- border-radius:10px;padding:14px;cursor:pointer;
-}
-.package.active{border:2px solid #35aaff;background:#17314f}
-.package b{display:block;font-size:14px}
-.package small{display:block;color:#a9bfd9;margin-top:8px}
-.total{
- display:flex;justify-content:space-between;
- align-items:center;margin:22px 0;font-size:17px;
-}
-.total b{color:#42b5ff}
 button{
- width:100%;padding:15px;border:0;border-radius:10px;
- background:linear-gradient(100deg,#087bd1,#25aaff);
- color:white;font-weight:bold;font-size:15px;
- cursor:pointer;
+ border:0;border-radius:30px;padding:15px 30px;
+ font-size:17px;font-weight:bold;
+ box-shadow:0 5px 12px #e58aab55;
+ touch-action:manipulation
 }
-button:active{opacity:.8}
-.info{
- background:#0b172a;border:1px solid #263d5c;
- border-radius:10px;padding:13px;
- color:#a9bfd5;font-size:12px;line-height:1.6;
+#yes{background:#ff5794;color:white}
+#no{background:white;color:#ed548b;position:relative}
+#success{
+ display:none;position:absolute;inset:0;
+ background:#fff0f6;z-index:20;
+ align-items:center;justify-content:center;
+ flex-direction:column;padding:20px
 }
-.benefits p{color:#c4d4e8;font-size:14px}
-footer{
- margin-top:30px;padding:25px 15px;text-align:center;
- color:#8496b0;border-top:1px solid #263958;font-size:12px;
+.big{font-size:90px;animation:bounce 1s infinite}
+.heart{
+ position:fixed;bottom:-30px;
+ animation:fly 3s linear forwards;
+ pointer-events:none;z-index:30
 }
-footer b{color:#39adff;font-size:18px}
+@keyframes fly{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
 </style>
 </head>
 <body>
 
-<header>
- <div class="logo">ALFAN<span>STORE.id</span></div>
- <div class="header-tag">🎮 GAME STORE</div>
-</header>
+<div class="arena" id="arena">
 
-<section class="hero">
- <small>WELCOME TO ALFANSTORE</small>
- <h1>Top Up Game<br>Jadi Lebih Mudah!</h1>
- <p>Pilih game favoritmu, pilih nominal, dan kirim pertanyaan pesanan melalui WhatsApp.</p>
-</section>
+<h1>Aku mau tanya sesuatu... 🥺</h1>
+<p>
+Sebenernya aku suka sama kamu.<br>
+Kamu mau nggak jadi pacarku? ❤️
+</p>
 
-<main class="container">
+<div class="pentol">
+<svg viewBox="0 0 200 220" width="100%" height="100%">
+<path d="M75 165 L65 190 M125 165 L135 190"
+stroke="#a56b50" stroke-width="12" stroke-linecap="round"/>
+<circle cx="100" cy="105" r="75"
+fill="#fffdf8" stroke="#e8c9b9" stroke-width="3"/>
+<path d="M30 115 Q5 120 20 145 M170 115 Q195 120 180 145"
+stroke="#fffdf8" stroke-width="13" fill="none"
+stroke-linecap="round"/>
+<ellipse cx="75" cy="100" rx="6" ry="9" fill="#42332f"/>
+<ellipse cx="125" cy="100" rx="6" ry="9" fill="#42332f"/>
+<ellipse cx="58" cy="120" rx="12" ry="7" fill="#ffb6c9"/>
+<ellipse cx="142" cy="120" rx="12" ry="7" fill="#ffb6c9"/>
+<path d="M88 122 Q100 134 112 122"
+stroke="#a56b50" stroke-width="3" fill="none"/>
+<path d="M100 58 C80 35 57 55 100 88 C143 55 120 35 100 58"
+fill="#ff6b9f"/>
+</svg>
+</div>
 
- <h2 class="section-title">🔥 Pilih Game Favorit</h2>
- <div class="games">
-  <div class="game active" onclick="choose(this,'Mobile Legends')">
-   <div class="emoji">⚔️</div><b>Mobile Legends</b>
-  </div>
-  <div class="game" onclick="choose(this,'Free Fire')">
-   <div class="emoji">🔥</div><b>Free Fire</b>
-  </div>
-  <div class="game" onclick="choose(this,'PUBG Mobile')">
-   <div class="emoji">🎯</div><b>PUBG Mobile</b>
-  </div>
-  <div class="game" onclick="choose(this,'Genshin Impact')">
-   <div class="emoji">✨</div><b>Genshin Impact</b>
-  </div>
-  <div class="game" onclick="choose(this,'Honor of Kings')">
-   <div class="emoji">👑</div><b>Honor of Kings</b>
-  </div>
- </div>
+<div class="actions">
+<button id="yes">MAU ❤️</button>
+<button id="no">TIDAK 😭</button>
+</div>
 
- <section class="panel">
-  <h2 class="section-title">🛒 Buat Pesanan</h2>
+<div id="success">
+<div class="big">🥰❤️</div>
+<h1>YEAYYY!</h1>
+<p>Terima kasih sudah menerima aku ❤️</p>
+<div style="font-size:55px">💕 🌸 💕</div>
+</div>
 
-  <label>Game pilihan</label>
-  <input id="game" value="Mobile Legends" readonly>
-
-  <label>User ID</label>
-  <input id="uid" placeholder="Masukkan User ID">
-
-  <label>Zone ID / Server ID</label>
-  <input id="server" placeholder="Masukkan jika diperlukan">
-
-  <label>Pilih nominal top up</label>
-  <div class="packages" id="packages"></div>
-
-  <div class="total">
-   <span>Total harga contoh</span>
-   <b id="total">Pilih nominal</b>
-  </div>
-
-  <label>Metode pembayaran yang ingin ditanyakan</label>
-  <select id="payment">
-   <option>QRIS</option>
-   <option>Transfer Bank</option>
-   <option>Konfirmasi metode pembayaran</option>
-  </select>
-
-  <button onclick="order()">PESAN MELALUI WHATSAPP</button>
-
-  <p class="info">
-   ℹ️ Harga di website ini masih contoh dan belum merupakan penawaran transaksi aktif. Konfirmasikan harga serta ketersediaan produk sebelum melakukan pembayaran. Jangan kirim bukti pembayaran sebelum pesanan terverifikasi.
-  </p>
- </section>
-
- <section class="panel benefits">
-  <h2 class="section-title">🛡️ Tentang ALFANSTORE</h2>
-  <p>✔ Tampilan mudah digunakan</p>
-  <p>✔ Pilihan game populer</p>
-  <p>✔ Detail pesanan lebih teratur</p>
-  <p>✔ Layanan pelanggan melalui WhatsApp</p>
- </section>
-
-</main>
-
-<footer>
- <b>ALFANSTORE.id</b>
- <p>Game Top Up Store</p>
- <p>© 2026 ALFANSTORE.id</p>
-</footer>
+</div>
 
 <script>
-let selectedGame="Mobile Legends";
-let selectedPackage=null;
+// GANTI NOMOR INI DENGAN NOMOR WHATSAPP KAMU
+const nomorWA = "6281234567890";
 
-// GANTI DENGAN NOMOR WHATSAPP TOKO KAMU
-const nomorWA="6285816380788";
+const arena = document.getElementById("arena");
+const no = document.getElementById("no");
 
-const products={
- "Mobile Legends":[
-  ["86 Diamonds",20000],
-  ["172 Diamonds",39000],
-  ["257 Diamonds",58000],
-  ["344 Diamonds",77000],
-  ["514 Diamonds",115000],
-  ["706 Diamonds",155000]
- ],
- "Free Fire":[
-  ["70 Diamonds",10000],
-  ["140 Diamonds",20000],
-  ["355 Diamonds",50000],
-  ["720 Diamonds",100000],
-  ["1450 Diamonds",200000],
-  ["2180 Diamonds",300000]
- ],
- "PUBG Mobile":[
-  ["60 UC",16000],
-  ["325 UC",79000],
-  ["660 UC",155000],
-  ["1800 UC",390000],
-  ["3850 UC",780000],
-  ["8100 UC",1550000]
- ],
- "Genshin Impact":[
-  ["60 Genesis Crystals",16000],
-  ["300 Genesis Crystals",79000],
-  ["980 Genesis Crystals",239000],
-  ["1980 Genesis Crystals",479000]
- ],
- "Honor of Kings":[
-  ["80 Tokens",16000],
-  ["240 Tokens",49000],
-  ["400 Tokens",79000],
-  ["800 Tokens",155000]
- ]
-};
+function kabur(e){
+ e.preventDefault();
 
-function rupiah(n){
- return "Rp"+n.toLocaleString("id-ID");
+ const area = arena.getBoundingClientRect();
+ const btn = no.getBoundingClientRect();
+
+ const maxX = area.width - btn.width - 15;
+ const maxY = area.height - btn.height - 15;
+
+ const x = 10 + Math.random() * Math.max(0,maxX-10);
+ const y = area.height * 0.55 +
+ Math.random() * Math.max(0,maxY-area.height*0.55);
+
+ no.style.position="absolute";
+ no.style.left=x+"px";
+ no.style.top=y+"px";
 }
 
-function choose(el,name){
- document.querySelectorAll(".game").forEach(x=>x.classList.remove("active"));
- el.classList.add("active");
- selectedGame=name;
- selectedPackage=null;
- document.getElementById("game").value=name;
- renderPackages();
-}
+no.addEventListener("pointerdown",kabur);
+no.addEventListener("pointerenter",kabur);
+no.addEventListener("click",kabur);
 
-function renderPackages(){
- const area=document.getElementById("packages");
- area.innerHTML="";
+document.getElementById("yes").addEventListener("click",function(){
+ document.getElementById("success").style.display="flex";
+ no.style.display="none";
 
- products[selectedGame].forEach((p,i)=>{
-  const item=document.createElement("div");
-  item.className="package";
-  const title=document.createElement("b");
-  title.textContent=p[0];
-  const price=document.createElement("small");
-  price.textContent=rupiah(p[1]);
-  item.append(title,price);
-
-  item.onclick=()=>{
-   selectedPackage=i;
-   document.querySelectorAll(".package").forEach(x=>x.classList.remove("active"));
-   item.classList.add("active");
-   document.getElementById("total").textContent=rupiah(p[1]);
-  };
-
-  area.appendChild(item);
- });
-
- document.getElementById("total").textContent="Pilih nominal";
-}
-
-function order(){
- const uid=document.getElementById("uid").value.trim();
- const server=document.getElementById("server").value.trim();
-
- if(!uid){
-  alert("Masukkan User ID terlebih dahulu.");
-  return;
+ for(let i=0;i<45;i++){
+  setTimeout(buatHati,i*80);
  }
 
- if(selectedPackage===null){
-  alert("Silakan pilih nominal top up.");
-  return;
- }
+ const pesan="Aku sudah jawab pertanyaan kamu. Aku MAU ❤️🥰";
 
- if(nomorWA==="628xxxxxxxxxx"){
-  alert("Nomor WhatsApp toko belum diatur di dalam kode.");
-  return;
- }
+ setTimeout(function(){
+  window.location.href=
+   "https://wa.me/"+nomorWA+"?text="+encodeURIComponent(pesan);
+ },1800);
+});
 
- const p=products[selectedGame][selectedPackage];
- const payment=document.getElementById("payment").value;
-
- const pesan=
- "Halo ALFANSTORE.id, saya ingin bertanya tentang pesanan:\n\n"+
- "Game: "+selectedGame+"\n"+
- "User ID: "+uid+"\n"+
- "Zone/Server ID: "+(server||"-")+"\n"+
- "Produk: "+p[0]+"\n"+
- "Harga contoh: "+rupiah(p[1])+"\n"+
- "Metode pembayaran: "+payment+
- "\n\nMohon konfirmasi harga dan ketersediaan produk.";
-
- const url="https://wa.me/"+nomorWA+"?text="+encodeURIComponent(pesan);
- window.open(url,"_blank");
+function buatHati(){
+ const heart=document.createElement("div");
+ heart.className="heart";
+ heart.textContent=["❤️","💕","💖","💗","🌸"][
+ Math.floor(Math.random()*5)];
+ heart.style.left=Math.random()*100+"vw";
+ heart.style.fontSize=(20+Math.random()*25)+"px";
+ document.body.appendChild(heart);
+ setTimeout(()=>heart.remove(),3000);
 }
-
-renderPackages();
 </script>
 
 </body>
